@@ -582,6 +582,7 @@ function finity.new(isdark, gprojectName, thinProject)
 				if kind then
 					if string.lower(kind) == "textlabel" or string.lower(kind) == "label" then
 						function cheat:SetText(value)
+							cheat.frame.Name = value
                             cheat.label.Text = value
                         end
 					elseif string.lower(kind) == "checkbox" or string.lower(kind) == "toggle" then
