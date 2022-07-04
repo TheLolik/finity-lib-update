@@ -1010,6 +1010,7 @@ function finity.new(isdark, gprojectName, thinProject)
 						cheat.list.Parent = cheat.container
 					elseif string.lower(kind) == "textbox" then
 						local placeholdertext = data and data.placeholder
+						local number = data and data.numberonly
 
 						cheat.background = finity:Create("ImageLabel", {
 							Name = "Background",
@@ -1057,6 +1058,10 @@ function finity.new(isdark, gprojectName, thinProject)
 
 							finity.gs["TweenService"]:Create(cheat.background, TweenInfo.new(0.2), {ImageColor3 = theme.textbox_background}):Play()
 							finity.gs["TweenService"]:Create(cheat.textbox, TweenInfo.new(0.1), {TextColor3 = theme.textbox_text}):Play()
+
+							if numberonly then
+								cheat.textbox.Text = TextBox.Text:gsub('%D+', '')
+							end
 
 							cheat.value = cheat.textbox.Text
 
