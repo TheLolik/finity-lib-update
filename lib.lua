@@ -1059,8 +1059,8 @@ function finity.new(isdark, gprojectName, thinProject)
 							finity.gs["TweenService"]:Create(cheat.background, TweenInfo.new(0.2), {ImageColor3 = theme.textbox_background}):Play()
 							finity.gs["TweenService"]:Create(cheat.textbox, TweenInfo.new(0.1), {TextColor3 = theme.textbox_text}):Play()
 
-							if numberonly then
-								cheat.textbox.Text = TextBox.Text:gsub('%D+', '')
+							if number then
+								cheat.textbox.Text = cheat.textbox.Text:gsub('%D+', '')
 							end
 
 							cheat.value = cheat.textbox.Text
